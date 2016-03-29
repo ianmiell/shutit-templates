@@ -9,18 +9,3 @@
 # This feeds into automated testing of each module.
 [{{ skeleton.domain }}.{{ skeleton.module_name }}.{{ skeleton.module_name }}]
 shutit.core.module.build:yes
-# Allowed images as a regexp, eg ["ubuntu:12.*"], or [".*"], or ["centos"].
-# It's recommended this is locked down as far as possible.
-shutit.core.module.allowed_images:["{{ dockerfile.base_image }}"]
-
-# Aspects of build process
-[build]
-base_image:{{ skeleton.base_image }}
-
-# Volume arguments wanted as part of the build
-[target]
-volumes:
-
-[repository]
-name:{{ skeleton.module_name }}
-
