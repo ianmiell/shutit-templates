@@ -7,7 +7,7 @@ then
     exit 1                                                                                                                                                           
 fi                                                                                                                                                                   
 pushd ..                                                                                                                                                             
-$SHUTIT build -d {{ cfg.build.skel_delivery }} "$@"                                                                                                                      
+$SHUTIT build -d {{ build.skel_delivery }} "$@"                                                                                                                      
 {{ build.skel_delivery }}
 {{ build }}
 if [[ $? != 0 ]]                                                                                                                                                     
