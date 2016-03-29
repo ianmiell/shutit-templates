@@ -4,6 +4,7 @@ chmod +x bin/test.sh
 chmod +x bin/run.sh
 chmod 0400 config/build.cnf
 chmod 0400 config/push.cnf
+mv template.py {{ skeleton.module_name }}.py
 
 
 echo << EOF
