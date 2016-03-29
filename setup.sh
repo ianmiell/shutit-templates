@@ -7,7 +7,7 @@ chmod 0400 configs/push.cnf
 mv template.py {{ skeleton.module_name }}.py
 
 
-echo << EOF
+cat << EOF
 ================================================================================
 Run:
 
