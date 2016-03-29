@@ -7,9 +7,7 @@ then
     exit 1                                                                                                                                                           
 fi                                                                                                                                                                   
 pushd ..                                                                                                                                                             
-$SHUTIT build -d {{ build.skel_delivery }} "$@"                                                                                                                      
-{{ build.skel_delivery }}
-{{ build }}
+$SHUTIT build -d {{ skeleton.delivery }} "$@"                                                                                                                      
 if [[ $? != 0 ]]                                                                                                                                                     
 then                                                                                                                                                                 
     popd                                                                                                                                                             
