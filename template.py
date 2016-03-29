@@ -77,7 +77,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		shutit.send('vagrant init ' + vagrant_image)
 		shutit.send('vagrant up --provider virtualbox',timeout=99999)
 		shutit.login(command='vagrant ssh')
-		shutit.login(command='sudo su -',password='vagrant',note='Become root (there is a problem logging in as admin with the vagrant user')
+		shutit.login(command='sudo su -',password='vagrant')
 
 		shutit.logout()
 		shutit.logout()
@@ -91,7 +91,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		# shutit.get_config(self.module_id, 'myconfig', default='a value')
 		#                                      and reference in your code with:
 		# shutit.cfg[self.module_id]['myconfig']
-		shutit.get_config(self.module_id,'vagrant_image',default='precise64')
+		shutit.get_config(self.module_id,'vagrant_image',default='ubuntu/trusty64')
 		shutit.get_config(self.module_id,'vagrant_provider',default='virtualbox')
 		return True
 
