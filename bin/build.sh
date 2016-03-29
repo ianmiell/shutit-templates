@@ -7,7 +7,7 @@ then
     exit 1                                                                                                                                                           
 fi                                                                                                                                                                   
 pushd ..                                                                                                                                                             
-$SHUTIT build -d SHUTIT_TEMPLATE_skel_delivery "$@"                                                                                                                      
+$SHUTIT build -d {{ build.skel_delivery }} "$@"                                                                                                                      
 if [[ $? != 0 ]]                                                                                                                                                     
 then                                                                                                                                                                 
     popd                                                                                                                                                             
