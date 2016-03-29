@@ -3,7 +3,7 @@ chmod +x run.sh
 chmod 0400 configs/build.cnf
 mv template.py {{ skeleton.module_name }}.py
 
-echo << EOF
+cat << EOF
 ================================================================================
 Run:
 
