@@ -2,8 +2,8 @@
 chmod +x bin/build.sh
 chmod +x bin/test.sh
 chmod +x bin/run.sh
-chmod 0400 config/build.cnf
-chmod 0400 config/push.cnf
+chmod 0400 configs/build.cnf
+chmod 0400 configs/push.cnf
 mv template.py {{ skeleton.module_name }}.py
 
 
