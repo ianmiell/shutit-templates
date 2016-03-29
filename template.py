@@ -5,7 +5,6 @@ from shutit_module import ShutItModule
 
 class {{ skeleton.module_name }}(ShutItModule):
 
-
 	def build(self, shutit):
 		# Some useful API calls for reference. See shutit's docs for more info and options:
 		#
@@ -82,18 +81,6 @@ class {{ skeleton.module_name }}(ShutItModule):
 		#                                      and reference in your code with:
 		# shutit.cfg[self.module_id]['myconfig']
 		return True
-
-	def test(self, shutit):
-		# For test cycle part of the ShutIt build.
-		return True
-
-	def finalize(self, shutit):
-		# Any cleanup required at the end.
-		return True
-	
-	def is_installed(self, shutit):
-		return False
-
 
 def module():
 	return {{ skeleton.module_name }}(

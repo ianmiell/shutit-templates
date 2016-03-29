@@ -7,5 +7,5 @@
 ###############################################################################
 # When this module is the one being built, which modules should be built along with it by default?
 # This feeds into automated testing of each module.
-[{{ skeleton.domain }}.{{ skeleton.module_name }}.{{ skeleton.module_name }}]
+[{{ skeleton.domain }}.{{ skeleton.module_name }}]
 shutit.core.module.build:yes
