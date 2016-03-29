@@ -14,8 +14,8 @@ class {{ skeleton.module_name }}(ShutItModule):
 		#                                      by ShutIt with shell prompts.
 		# shutit.multisend(send,send_dict)   - Send a command, dict contains {expect1:response1,expect2:response2,...}
 		# shutit.send_and_get_output(send)   - Returns the output of the sent command
-		# shutit.send_and_match_output(send, matches) 
-		#                                    - Returns True if any lines in output match any of 
+		# shutit.send_and_match_output(send, matches)
+		#                                    - Returns True if any lines in output match any of
 		#                                      the regexp strings in the matches list
 		# shutit.send_until(send,regexps)    - Send command over and over until one of the regexps seen in the output.
 		# shutit.run_script(script)          - Run the passed-in string as a script
@@ -26,7 +26,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		#                                      Use this if your env (or more specifically, prompt) changes at all,
 		#                                      eg reboot, bash, ssh
 		# shutit.logout(command='exit')      - Clean up from a login.
-		# 
+		#
 		# COMMAND HELPER FUNCTIONS
 		# shutit.add_to_bashrc(line)         - Add a line to bashrc
 		# shutit.get_url(fname, locations)   - Get a file via url from locations specified in a list
@@ -47,7 +47,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		# shutit.send_host_dir(path, hostfilepath)
 		#                                    - Send directory and contents to path on the target
 		# shutit.insert_text(text, fname, pattern)
-		#                                    - Insert text into file fname after the first occurrence of 
+		#                                    - Insert text into file fname after the first occurrence of
 		#                                      regexp pattern.
 		# shutit.delete_text(text, fname, pattern)
 		#                                    - Delete text from file fname after the first occurrence of
@@ -69,17 +69,30 @@ class {{ skeleton.module_name }}(ShutItModule):
 		# shutit.get_input(msg,default,valid[],boolean?,ispass?)
 		#                                    - Get input from user and return output
 		# shutit.fail(msg)                   - Fail the program and exit with status 1
-		# 
+		#
+		vagrant_image = shutit.cfg[self.module_id]['vagrant_image']
+		vagrant_provider = shutit.cfg[self.module_id]['vagrant_provider']
+		module_name = {{ skeleton.module_name }}
+		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
+		shutit.send('vagrant init ' + vagrant_image)
+		shutit.send('vagrant up --provider virtualbox',timeout=99999)
+		shutit.login(command='vagrant ssh')
+		shutit.login(command='sudo su -',password='vagrant',note='Become root (there is a problem logging in as admin with the vagrant user')
+
+		shutit.logout()
+		shutit.logout()
 		return True
 
 	def get_config(self, shutit):
 		# CONFIGURATION
 		# shutit.get_config(module_id,option,default=None,boolean=False)
-		#                                    - Get configuration value, boolean indicates whether the item is 
+		#                                    - Get configuration value, boolean indicates whether the item is
 		#                                      a boolean type, eg get the config with:
 		# shutit.get_config(self.module_id, 'myconfig', default='a value')
 		#                                      and reference in your code with:
 		# shutit.cfg[self.module_id]['myconfig']
+		shutit.get_config(self.module_id,'vagrant_image',default='precise64')
+		shutit.get_config(self.module_id,'vagrant_provider',default='virtualbox')
 		return True
 
 def module():
@@ -87,7 +100,7 @@ def module():
 		'{{ skeleton.domain }}.{{ skeleton.module_name }}', {{ skeleton.domain_hash }}.0001,
 		description='',
 		maintainer='',
-		delivery_methods=['{{ skeleton.delivery }}'],
-		depends=['{{ skeleton.depends }}']
+		delivery_methods=['bash'],
+		depends=['{{ skeleton.depends }}','shutit-library.virtualbox.virtualbox.virtualbox','tk.shutit.vagrant.vagrant.vagrant']
 	)
 
