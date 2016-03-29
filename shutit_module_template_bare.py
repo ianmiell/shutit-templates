@@ -3,8 +3,7 @@
 
 from shutit_module import ShutItModule
 
-
-class template(ShutItModule):
+class {{ skeleton.module_name }}(ShutItModule):
 
 
 	def build(self, shutit):
@@ -97,11 +96,11 @@ class template(ShutItModule):
 
 
 def module():
-	return template(
-		GLOBALLY_UNIQUE_STRING, FLOAT,
+	return {{ skeleton.module_name }}(
+		{{ skeleton.domain }}.{{ skeleton.module_name }}.{{ skeleton.module_name }}, {{ skeleton.domain_hash }}.0001,
 		description='',
 		maintainer='',
-		delivery_methods=['DELIVERY'],
-		depends=['DEPENDS']
+		delivery_methods=['{{ skeleton.delivery }}'],
+		depends=['{{ skeleton.depends }}']
 	)
 

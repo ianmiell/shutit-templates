@@ -1,4 +1,4 @@
-FROM SHUTIT_TEMPLATE_base_image
+FROM {{ dockerfile.base_image }}
                                                                                                                                                                       
 RUN apt-get update                                                                                                                                                    
 RUN apt-get install -y -qq git python-pip                                                                                                                             
