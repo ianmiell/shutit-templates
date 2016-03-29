@@ -97,7 +97,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 
 def module():
 	return {{ skeleton.module_name }}(
-		{{ skeleton.domain }}.{{ skeleton.module_name }}, {{ skeleton.domain_hash }}.0001,
+		'{{ skeleton.domain }}.{{ skeleton.module_name }}', {{ skeleton.domain_hash }}.0001,
 		description='',
 		maintainer='',
 		delivery_methods=['{{ skeleton.delivery }}'],
