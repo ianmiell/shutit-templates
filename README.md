@@ -5,7 +5,7 @@ Each branch represents a ShutIt 'pattern' for creating automated environments.
 master is deliberately empty.
 
 <table>
-<td>BRANCH</td><td>PATTERN</td>
+<th>BRANCH</th><th>PATTERN</th>
 <tr>
 <td>bash</td><td>straightforward bash script</td>
 </tr>
