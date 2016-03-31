@@ -19,5 +19,5 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "512"
   end
-  config.vm.provision "shell", keep_color: true, path: "setup_cluster_lab.sh"
+  config.vm.provision "shell", keep_color: true, path: "/bin/true"
 end
