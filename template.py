@@ -72,7 +72,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		#
 		vagrant_image = shutit.cfg[self.module_id]['vagrant_image']
 		vagrant_provider = shutit.cfg[self.module_id]['vagrant_provider']
-		module_name = {{ skeleton.module_name }}
+		module_name = '{{ skeleton.module_name }}'
 		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
 		shutit.send('vagrant init ' + vagrant_image)
 		shutit.send('vagrant up --provider virtualbox',timeout=99999)
