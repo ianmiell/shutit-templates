@@ -2,6 +2,7 @@
 """
 
 from shutit_module import ShutItModule
+import random
 
 class {{ skeleton.module_name }}(ShutItModule):
 
