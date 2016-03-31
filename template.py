@@ -70,11 +70,8 @@ class {{ skeleton.module_name }}(ShutItModule):
 		#                                    - Get input from user and return output
 		# shutit.fail(msg)                   - Fail the program and exit with status 1
 		#
-		vagrant_image = shutit.cfg[self.module_id]['vagrant_image']
-		vagrant_provider = shutit.cfg[self.module_id]['vagrant_provider']
 		module_name = {{ skeleton.module_name }}
 		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
-		shutit.send('vagrant init ' + vagrant_image)
 		shutit.send('vagrant up --provider virtualbox',timeout=99999)
 		shutit.login(command='vagrant ssh')
 		shutit.login(command='sudo su -',password='vagrant',note='Become root (there is a problem logging in as admin with the vagrant user')
