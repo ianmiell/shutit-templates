@@ -3,6 +3,7 @@
 
 from shutit_module import ShutItModule
 import random
+import string
 
 class {{ skeleton.module_name }}(ShutItModule):
 
@@ -73,7 +74,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		#
 		vagrant_image = shutit.cfg[self.module_id]['vagrant_image'] + ''.join(random.choice(chars) for _ in range(6))
 		vagrant_provider = shutit.cfg[self.module_id]['vagrant_provider']
-		module_name = '{{ skeleton.module_name }}'
+		module_name = '{{ skeleton.module_name }}' + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
 		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
 		shutit.send('vagrant init ' + vagrant_image)
 		shutit.send('vagrant up --provider virtualbox',timeout=99999)
