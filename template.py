@@ -72,11 +72,11 @@ class {{ skeleton.module_name }}(ShutItModule):
 		#                                    - Get input from user and return output
 		# shutit.fail(msg)                   - Fail the program and exit with status 1
 		#
-		module_name = '{{ skeleton.module_name }}' + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
+		module_name = '{{ skeleton.module_name }}_' + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
 		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
 		shutit.send_host_file('Vagrantfile','Vagrantfile')
 		shutit.send('vagrant up --provider virtualbox',timeout=99999)
-		shutit.login(command='vagrant ssh')
+		shutit.login(command='vagrant ssh leader')
 		shutit.login(command='sudo su -',password='vagrant')
 
 		shutit.logout()
