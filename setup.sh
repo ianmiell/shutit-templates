@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -u
 chmod +x bin/build.sh
 chmod +x bin/test.sh
 chmod +x bin/run.sh
