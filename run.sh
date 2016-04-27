@@ -6,12 +6,9 @@ then
     echo "Must have shutit on path, eg export PATH=$PATH:/path/to/shutit_dir"
     exit 1
 fi
-pushd ..
-$SHUTIT build -d {{ skeleton.delivery }} "$@"
+$SHUTIT build -d docker "$@"
 if [[ $? != 0 ]]
 then
-    popd
     exit 1
 fi
-popd
 
