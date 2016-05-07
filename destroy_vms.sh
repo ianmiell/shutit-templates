@@ -6,7 +6,7 @@ do
 	then
 		break
 	else
-		ps -ef | grep virtualbox | grep {{ skelton.module_name }} | awk '{print $2}' | xargs kill
+		ps -ef | grep virtualbox | grep {{ skeleton.module_name }} | awk '{print $2}' | xargs kill
 		sleep 10
 	fi
 done
