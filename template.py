@@ -81,6 +81,30 @@ class {{ skeleton.module_name }}(ShutItModule):
 		shutit.login(command='vagrant ssh')
 		shutit.login(command='sudo su -',password='vagrant')
 
+		# apt-get install openvswitch-switch docker.io xterm wireshark make ImageMagick tk tcllib user-mode-linux util-linux
+		shutit.install('imagemagick')
+		shutit.install('tcl')
+		shutit.install('tcllib')
+		shutit.install('tk')
+		# wireshark (with GUI)
+		shutit.install('wireshark-gtk')
+		shutit.install('docker.io')
+		# OpenvSwitch
+		shutit.install('openvswitch-switch-dkms')
+		# nsenter (part of the util-linux package since version 2.23 and later)
+		shutit.install('util-linux')
+		shutit.install('xterm')
+		# make (used for installation)
+		shutit.install('make')
+		shutit.install('git')
+
+		shutit.send('git clone https://github.com/imunes/imunes.git')
+		shutit.send('cd imunes')
+		shutit.send('make install')
+
+		# required?
+		shutit.send('imunes -p')
+
 		shutit.logout()
 		shutit.logout()
 		return True
