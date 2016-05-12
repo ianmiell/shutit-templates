@@ -18,4 +18,7 @@ master is deliberately empty.
 <tr>
 <td>vagrant_multinode</td><td>vagrant multinode machine setup</td>
 </tr>
+<tr>
+<td>vagrant_imunes</td><td>vagrant machine setup with imunes for network study</td>
+</tr>
 </table>
