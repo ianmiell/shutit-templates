@@ -90,7 +90,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		shutit.install('wireshark')
 		shutit.install('docker.io')
 		# OpenvSwitch
-		shutit.install('openvswitch-switch-dkms')
+		shutit.install('openvswitch-switch')
 		# nsenter (part of the util-linux package since version 2.23 and later)
 		shutit.install('util-linux')
 		shutit.install('xterm')
