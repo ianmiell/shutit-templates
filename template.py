@@ -87,7 +87,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		shutit.install('tcllib')
 		shutit.install('tk')
 		# wireshark (with GUI)
-		shutit.install('wireshark-gtk')
+		shutit.install('wireshark')
 		shutit.install('docker.io')
 		# OpenvSwitch
 		shutit.install('openvswitch-switch-dkms')
