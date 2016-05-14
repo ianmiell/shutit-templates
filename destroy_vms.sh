@@ -2,7 +2,7 @@
 while true 
 do
 	VBoxManage list runningvms | grep {{ skeleton.module_name }} | awk '{print $1}' | xargs -IXXX VBoxManage controlvm 'XXX' poweroff && VBoxManage list vms | grep {{ skeleton.module_name }} | awk '{print $1}'  | xargs -IXXX VBoxManage unregistervm 'XXX' --delete
-	if [[ $(VBoxManage list vms | grep {{ skeleton.module_name }} | wc -l) == '0' ]]
+	if [[ $(VBoxManage list vms | grep {{ skeleton.module_name }} | wc -l) -eq '0' ]]
 	then
 		break
 	else
