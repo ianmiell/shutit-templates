@@ -79,7 +79,7 @@ class {{ skeleton.module_name }}(ShutItModule):
 		module_name = '{{ skeleton.module_name }}_' + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
 		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
 		shutit.send('vagrant init ' + vagrant_image)
-		shutit.send_file('Vagrantfile','''
+		shutit.send_file('/tmp/' + module_name + '/Vagrantfile','''
 Vagrant.configure(2) do |config|
   config.vm.box = "''' + vagrant_image + '''
   # config.vm.box_check_update = false
@@ -88,7 +88,7 @@ Vagrant.configure(2) do |config|
   # config.vm.network "public_network"
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.provider "virtualbox" do |vb|
-    vb.gui = ''' + giu + '''
+    vb.gui = ''' + gui + '''
     vb.memory = "''' + memory + '''"
     vb.name = "{{ skeleton.module_name }}"
   end
