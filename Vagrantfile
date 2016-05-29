@@ -18,6 +18,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "..", "/cluster-src"
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "512"
+    vb.gui = false
   end
   config.vm.provision "shell", keep_color: true, path: "/bin/true"
 end
