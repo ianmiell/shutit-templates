@@ -60,3 +60,38 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Python
+*.pyc
+# Configs
+**.cnf
+!**build.cnf
+!**push.cnf
+!**defaults.cnf
+# Logs
+**.log
+# Nohups and outs
+nohup.out
+out
+# Lock files
+**.lck
+# Docs
+docs/_build
+# Artifacts
+artifacts/*
+# Resources
+*resources/*
+!*resources/README.md
+!*shutit_resources/README.md
+# Keys
+**.gpg
+**.gpg~
+# Show Config
+show_config/*
+build/*
+dist/*
+shutit.egg*
+.eric6*
+shutit.e4p
+#bak
+*bak
