@@ -1,4 +1,4 @@
-FROM {{ dockerfile.base_image }}
+FROM {{ shutitfile.base_image }}
                                                                                                                                                                       
 RUN apt-get update                                                                                                                                                    
 RUN apt-get install -y -qq git python-pip                                                                                                                             
