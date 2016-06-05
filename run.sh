@@ -2,9 +2,9 @@
 set -e
 
 MODULE_NAME="{{ skeleton.module_name }}"
-DIR="{{ skeleton.skel_path }}/$MODULE_NAME"
-DOMAIN="{{ skeleton.skel_domain }}"
-DELIVERY="{{ skeleton.skel_delivery }}"
+DIR="{{ skeleton.path }}/$MODULE_NAME"
+DOMAIN="{{ skeleton.domain }}"
+DELIVERY="{{ skeleton.delivery }}"
 
 rm -rf $DIR
 shutit skeleton \
