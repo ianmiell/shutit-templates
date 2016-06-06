@@ -9,12 +9,8 @@ git submodule init
 git submodule add https://github.com/ianmiell/shutit-library
 
 cat << EOF
-================================================================================
-Run:
-
-    cd $(pwd) && ./run.sh
-
-to run.
-================================================================================
+# Run:
+cd $(pwd) && ./run.sh
+# to run.
 EOF
 
