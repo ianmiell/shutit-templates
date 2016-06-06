@@ -2,7 +2,7 @@
 set -e
 
 MODULE_NAME="{{ skeleton.module_name }}"
-DIR="{{ skeleton.path }}"
+DIR="{{ skeleton.path }}/$MODULE_NAME/built"
 DOMAIN="{{ skeleton.domain }}"
 DELIVERY="{{ skeleton.delivery }}"
 
