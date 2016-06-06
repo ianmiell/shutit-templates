@@ -18,4 +18,10 @@ shutit skeleton \
 	--delivery ${DELIVERY} \
 	--template_branch docker
 
-cd $DIR && ./run.sh
+if [[ ${DELIVERY} == 'bash' ]]
+then
+	cd $DIR && ./run.sh
+elif [[ ${DELIVERY} == 'docker' ]]
+then
+	cd $DIR/bin && ./build.sh
+fi
