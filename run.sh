@@ -20,8 +20,8 @@ shutit skeleton \
 
 if [[ ${DELIVERY} == 'bash' ]]
 then
-	cd $DIR && ./run.sh
+	cd $DIR && ./run.sh "$@"
 elif [[ ${DELIVERY} == 'docker' ]]
 then
-	cd $DIR/bin && ./build.sh
+	cd $DIR/bin && ./build.sh "$@"
 fi
