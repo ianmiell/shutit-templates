@@ -1,1 +1,11 @@
 # See CheatSheet.md for help with syntax
+
+# Simple script to get going with:
+
+# A minimal todo app
+#FROM alpine
+#MODULE com.mycorp.mymodule.shutitfile1
+#DELIVERY docker
+#INSTALL node
+#INSTALL git
+#RUN npm install todo
