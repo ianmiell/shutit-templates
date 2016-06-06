@@ -10,8 +10,7 @@ DELIVERY="{{ skeleton.delivery }}"
 rm -rf $DIR
 
 shutit skeleton \
-	--shutitfile Shutitfile1 \
-	--shutitfile Shutitfile2 \
+	--shutitfile Shutitfile1 Shutitfile2 \
 	--module_directory ${DIR} \
 	--module_name ${MODULE_NAME} \
 	--domain ${DOMAIN} \
