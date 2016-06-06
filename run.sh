@@ -8,7 +8,6 @@ DOMAIN="{{ skeleton.domain }}"
 DELIVERY="{{ skeleton.delivery }}"
 
 rm -rf $DIR
-mkdir -p $DIR
 
 shutit skeleton \
 	--shutitfile Shutitfile1 \
