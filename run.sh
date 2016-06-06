@@ -2,9 +2,13 @@
 set -e
 
 MODULE_NAME="{{ skeleton.module_name }}"
-DIR="{{ skeleton.path }}/$MODULE_NAME/built"
+DIR="/tmp/shutit_built/{{ skeleton.path }}"
+BUILT_DIR="${DIR}/built"
 DOMAIN="{{ skeleton.domain }}"
 DELIVERY="{{ skeleton.delivery }}"
+
+rm -rf $DIR
+mkdir -p $DIR
 
 shutit skeleton \
 	--shutitfile Shutitfile1 \
