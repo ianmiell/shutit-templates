@@ -6,7 +6,6 @@ DIR="{{ skeleton.path }}"
 DOMAIN="{{ skeleton.domain }}"
 DELIVERY="{{ skeleton.delivery }}"
 
-rm -rf $DIR
 shutit skeleton \
 	--shutitfile Shutitfile1 \
 	--shutitfile Shutitfile2 \
