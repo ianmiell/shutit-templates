@@ -4,7 +4,7 @@
 
 # A minimal todo app
 #FROM alpine
-#MODULE com.mycorp.mymodule.shutitfile1
+#MODULE_ID com.mycorp.mymodule.shutitfile1
 #DELIVERY docker
 #INSTALL nodejs
 #INSTALL git
