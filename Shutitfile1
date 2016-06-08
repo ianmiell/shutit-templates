@@ -6,6 +6,6 @@
 #FROM alpine
 #MODULE com.mycorp.mymodule.shutitfile1
 #DELIVERY docker
-#INSTALL node
+#INSTALL nodejs
 #INSTALL git
 #RUN npm install todo
