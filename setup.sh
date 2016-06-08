@@ -10,18 +10,11 @@ mv template.py {{ skeleton.module_name }}.py
 
 
 cat << EOF
-================================================================================
-Run:
-
-    cd $(pwd)/bin && ./build.sh
-
-to build.
-
-And then:
-
-	./run.sh
-
-to run.
-================================================================================
+# Run:
+cd $(pwd)/bin && ./build.sh
+# to build.
+# And then:
+./run.sh
+# to run.
 EOF
 
