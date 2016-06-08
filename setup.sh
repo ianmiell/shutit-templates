@@ -5,10 +5,10 @@ set -u
 chmod +x run.sh
 cat << EOF
 # Run:
-cd $(pwd) && ./compile.sh
+cd $(pwd) && ./run.sh
 # to build.
 # Or
-# cd $(pwd) && ./compile.sh -c
+# cd $(pwd) && ./run.sh -c
 # to run while choosing modules to build.
 EOF
 
