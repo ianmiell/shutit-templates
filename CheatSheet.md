@@ -41,6 +41,7 @@ LOGIN <arg>                - Log in as a user. Must be matched by a LOGOUT
 LOGOUT                     - Log out from a LOGIN
 USER <arg>                 - Synonym for LOGIN
 COMMENT <arg>              - Comment to pass through to the ShutIt script
+DESCRIPTION <arg>          - A description of the module
 
 # Docker delivery method
 
@@ -49,11 +50,12 @@ and are as per the Dockerfile syntax. ShutIt-specific notes are made here.
 
 FROM
 EXPOSE
-ENTRYPOINT
 CMD
 ADD
 COPY
 VOLUME
+COMMIT <arg1> <arg2>       - Commit the container at this point. <arg1> is the
+                             repository name, <arg2> is the tag.
 
 # ShutIt Lifecycle specifiers
 
