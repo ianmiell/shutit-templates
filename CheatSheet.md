@@ -54,8 +54,9 @@ CMD
 ADD
 COPY
 VOLUME
-COMMIT <arg1> <arg2>       - Commit the container at this point. <arg1> is the
-                             repository name, <arg2> is the tag.
+COMMIT <arg1>              - Commit the container at this point. <arg1> is the
+                             repository name, eg myrepo_name:mytag
+PUSH <arg1>                - Push the image with the tag <arg1>
 
 # ShutIt Lifecycle specifiers
 

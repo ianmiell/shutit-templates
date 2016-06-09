@@ -11,3 +11,4 @@
 #INSTALL git
 #RUN npm install todo
 #COMMIT shutitfile:part_one
+#PUSH shutitfile:part_one
