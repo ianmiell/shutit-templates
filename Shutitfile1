@@ -3,8 +3,8 @@
 # Simple script to get going with:
 
 #DESCRIPTION A minimal todo app
-#DEFAULT_INCLUDE true
 #MAINTAINER you@example.com
+
 #FROM alpine
 #MODULE_ID com.mycorp.mymodule.shutitfile1
 #DELIVERY docker
