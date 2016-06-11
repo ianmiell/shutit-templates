@@ -38,12 +38,12 @@ and are as per the Dockerfile syntax. ShutIt-specific notes are made here.
 
 <table>
 <tr><td><b>Command</b></td><td><b>Description</b></td></tr>
-<tr><td>FROM         </td><td></td></tr>
-<tr><td>EXPOSE       </td><td></td></tr>
-<tr><td>CMD          </td><td></td></tr>
-<tr><td>ADD          </td><td></td></tr>
-<tr><td>COPY         </td><td></td></tr>
-<tr><td>VOLUME       </td><td></td></tr>
+<tr><td>FROM         </td><td>See Docker docs.</td></tr>
+<tr><td>EXPOSE       </td><td>See Docker docs.</td></tr>
+<tr><td>CMD          </td><td>See Docker docs.</td></tr>
+<tr><td>ADD          </td><td>See Docker docs.</td></tr>
+<tr><td>COPY         </td><td>See Docker docs.</td></tr>
+<tr><td>VOLUME       </td><td>See Docker docs.</td></tr>
 <tr><td>COMMIT <arg1></td><td>Commit the container at this point. <arg1> is the repository name, eg myrepo_name:mytag </td></tr>
 <tr><td>PUSH   <arg1></td><td>Push the image with the tag <arg1> </td></tr>
 </table>
@@ -52,20 +52,10 @@ and are as per the Dockerfile syntax. ShutIt-specific notes are made here.
 
 This is advanced, and optional functionality.
 
-If not specified, then it is assumed we are in a 'build' section.
+If not specified, then it is assumed we are in a 'BUILD' section.
 
 <table>
 <tr><td><b>Command</b></td><td><b>Description</b></td></tr>
-<tr><td>BUILD_BEGIN       </td><td> </td></tr>
-<tr><td>BUILD_END         </td><td> </td></tr>
-<tr><td>START_BEGIN       </td><td> </td></tr>
-<tr><td>START_END         </td><td> </td></tr>
-<tr><td>STOP_BEGIN        </td><td> </td></tr>
-<tr><td>STOP_END          </td><td> </td></tr>
-<tr><td>TEST_BEGIN        </td><td> </td></tr>
-<tr><td>TEST_END          </td><td> </td></tr>
-<tr><td>CONFIG_BEGIN      </td><td> </td></tr>
-<tr><td>CONFIG_END        </td><td> </td></tr>
-<tr><td>ISINSTALLED_BEGIN </td><td> </td></tr>
-<tr><td>ISINSTALLED_END   </td><td> </td></tr>
+<tr><td>BUILD_BEGIN / BUILD_END </td><td>Build section (the default). This is the body of the run.</td></tr>
+<tr><td>TEST_BEGIN / TEST_END   </td><td>Test section. After all the modules' build sections are run, these sections are run. If any commands in this section fail, the entire run is deemed a failure.</td></tr>
 </table>
