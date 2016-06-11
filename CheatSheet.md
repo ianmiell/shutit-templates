@@ -57,5 +57,5 @@ If not specified, then it is assumed we are in a 'BUILD' section.
 <table>
 <tr><td><b>Command</b></td><td><b>Description</b></td></tr>
 <tr><td>BUILD_BEGIN / BUILD_END </td><td>Build section (the default). This is the body of the run.</td></tr>
-<tr><td>TEST_BEGIN / TEST_END   </td><td>Test section. After all the modules' build sections are run, these sections are run. If any commands in this section fail, the entire run is deemed a failure.</td></tr>
+<tr><td>TEST_BEGIN / TEST_END   </td><td>Test section. After all the modules' build sections are run, these sections are run. If any commands in these TEST sections fail, the entire run is deemed a failure.</td></tr>
 </table>
