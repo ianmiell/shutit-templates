@@ -12,7 +12,7 @@
 <tr><td>SEND <arg>                 </td><td>String to input at terminal </td></tr>
 <tr><td>RUN <arg>                  </td><td>See SEND </td></tr>
 <tr><td>EXPECT <arg>               </td><td>Continue if the specified regexp is seen in the output </td></tr>
-<tr><td>EXPECT_MULTI <arg>         </td><td>A series of name-value pairs. If the name is seen, then SEND the value. eg EXPECT_MULTI ['sername=myuser','assword=mypass'] The name need not be seen in the output to continue successfully.</td></tr>
+<tr><td>EXPECT_MULTI ['<name1>=<value1>','<name2>=<value2>',...]         </td><td>A series of name-value pairs. If the name is seen, then SEND the value. eg EXPECT_MULTI ['sername=myuser','assword=mypass'] The name need not be seen in the output to continue successfully.</td></tr>
 <tr><td>ASSERT_OUTPUT <arg>        </td><td>If the output from the previous command does not match, then throw an error </td></tr>
 <tr><td>UNTIL <arg>                </td><td>Send the previous command until the specified regexp is seen in the output </td></tr>
 <tr><td>GET_PASSWORD <arg>         </td><td>Get a password from the user where appropriate.  Only allowed after a LOGIN or USER line. <arg> is the prompt the user sees eg 'Input the password for the machine x' </td></tr>
@@ -33,6 +33,7 @@
 <tr><td>DESCRIPTION <arg>          </td><td>A description of the module </td></tr>
 <tr><td>SCRIPT_BEGIN               </td><td>The lines following this directive are run as a shell script. See also SCRIPT_END </td></tr>
 <tr><td>SCRIPT_END                 </td><td>The termination of a SCRIPT section. See also SCRIPT_BEGIN</td></tr>
+<tr><td>REPLACE_LINE ['filename=<filename>','line=<newline>','pattern=<regexp>']         </td><td>Replace the line matched by pattern in filename with the newline</td></tr>
 </table>
 
 # Docker delivery method
