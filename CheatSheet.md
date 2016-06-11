@@ -1,5 +1,7 @@
 # ShutItFile Cheat Sheet
 
+## Commonly-used commands
+
 <table>
 <tr><td><b>Command</b></td><td><b>Description</b></td></tr>
 <tr><td>DELIVERY <arg>             </td><td>ShutIt delivery type (bash, docker) </td></tr>
@@ -29,6 +31,8 @@
 <tr><td>USER <arg>                 </td><td>Become user specified (with su -). See also LOGIN, GET_PASSWORD, LOGOUT. Must be matched by a LOGOUT within the same section </td></tr>
 <tr><td>COMMENT <arg>              </td><td>Comment to pass through to the ShutIt script </td></tr>
 <tr><td>DESCRIPTION <arg>          </td><td>A description of the module </td></tr>
+<tr><td>SCRIPT_BEGIN               </td><td>The lines following this directive are run as a shell script. See also SCRIPT_END </td></tr>
+<tr><td>SCRIPT_END                 </td><td>The termination of a SCRIPT section. See also SCRIPT_BEGIN</td></tr>
 </table>
 
 # Docker delivery method
