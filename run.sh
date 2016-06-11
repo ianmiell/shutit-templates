@@ -15,7 +15,7 @@ shutit skeleton \
 	--module_name ${MODULE_NAME} \
 	--domain ${DOMAIN} \
 	--delivery ${DELIVERY} \
-	--template_branch docker
+	--template_branch ${DELIVERY}
 
 if [[ ${DELIVERY} == 'bash' ]]
 then
