@@ -35,6 +35,7 @@
 <tr><td>SCRIPT_BEGIN               </td><td>The lines following this directive are run as a shell script. See also SCRIPT_END </td></tr>
 <tr><td>SCRIPT_END                 </td><td>The termination of a SCRIPT section. See also SCRIPT_BEGIN</td></tr>
 <tr><td>REPLACE_LINE ['filename=<filename>','line=<newline>','pattern=<regexp>']         </td><td>Replace the line matched by pattern in filename with the newline</td></tr>
+<tr><td>LOG <arg>                  </td><td>Set the log level to <arg>, which can be one of: DEBUG, INFO, WARNING, ERROR, CRITICAL</td></tr>
 </table>
 
 # Docker delivery method
