@@ -1,6 +1,6 @@
 #!/bin/bash
-set -e
-set -u
+#set -e
+#set -u
 
 chmod +x run.sh
 cat << EOF
