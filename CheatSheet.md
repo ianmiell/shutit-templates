@@ -20,10 +20,10 @@
 <tr><td>ENV [name]=<value>         </td><td>Exports a variable in the local build context </td></tr>
 <tr><td>DEPENDS [arg]              </td><td>Stipulate a dependency on a MODULE_ID </td></tr>
 <tr><td>WORKDIR [arg]              </td><td>Change directory during build </td></tr>
-<tr><td>IF FILE_EXISTS [arg]       </td><td>Start an IF block that runs commands if the file specified exists </td></tr>
-<tr><td>IF_NOT FILE_EXISTS [arg]   </td><td>Start an IF block that runs commands if the file specified does not exist </td></tr>
-<tr><td>ELIF_NOT FILE_EXISTS [arg] </td><td>Start an ELSE block that runs commands if the file specified does not exist </td></tr>
-<tr><td>ELIF FILE_EXISTS [arg]     </td><td>Start else ELSE block that runs commands if the file specified exists </td></tr>
+<tr><td>IF [condition] [arg]       </td><td>Start an IF block that runs commands if the condition is met (see conditions) </td></tr>
+<tr><td>IF_NOT [condition] [arg]   </td><td>Start an IF block that runs commands if the condition is met (see conditions)  </td></tr>
+<tr><td>ELIF_NOT [condition] [arg] </td><td>Start an ELSE block that runs commands if the condition is met (see conditions) </td></tr>
+<tr><td>ELIF [condition] [arg]     </td><td>Start else ELSE block that runs commands if the if the condition is met (see conditions) </td></tr>
 <tr><td>ELSE                       </td><td>else block for an IF block </td></tr>
 <tr><td>ENDIF                      </td><td>end the IF block </td></tr>
 <tr><td>PAUSE_POINT [arg]          </td><td>Pause the build and give the user a shell to interact with. [arg] is the message the user sees eg 'Check all is ok' </td></tr>
@@ -39,7 +39,15 @@
 <tr><td>CONFIG [name_arg] [default_value]    </td><td>A config item that can be defaulted to default_value (optional), with the name name_arg. Can be referred to elsewhere in the module with {{ shutit.name_arg }}. <br/>For example, if you have a line 'CONFIG foo bar' then you could have another line such as: 'RUN rm {{ shutit.foo }}' which would be run as: 'RUN rm bar'. If no default is given, it is requested from the user.</td></tr>
 </table>
 
-# Docker delivery method
+## Conditions
+
+<table>
+<tr><td><b>Condition</b></td><td><b>Description</b></td></tr>
+<tr><td>FILE_EXISTS [arg]</td><td>Conditional argument hinging on whether file (or directory) exists.</td></tr>
+<tr><td>INSTALL_TYPE [arg]</td><td>Conditional argument hinging on the type of installs in this env (eg apt, yum, emerge et al)</td></tr>
+</table>
+
+## Docker delivery method
 
 The following are only usable when 'DELIVERY docker' line is included,
 and are as per the Dockerfile syntax. ShutIt-specific notes are made here.
@@ -56,7 +64,7 @@ and are as per the Dockerfile syntax. ShutIt-specific notes are made here.
 <tr><td>PUSH   <arg1></td><td>Push the image with the tag <arg1> </td></tr>
 </table>
 
-# ShutIt Lifecycle specifiers
+## ShutIt Lifecycle specifiers
 
 This is advanced, and optional functionality.
 
