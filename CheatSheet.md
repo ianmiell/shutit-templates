@@ -37,6 +37,7 @@
 <tr><td>REPLACE_LINE ['filename=[filename]','line=[new line]','pattern=[regexp]']         </td><td>Replace the line matched by pattern in filename with the newline</td></tr>
 <tr><td>LOG [arg]                  </td><td>Set the log level to [arg], which can be one of: DEBUG, INFO, WARNING, ERROR, CRITICAL</td></tr>
 <tr><td>CONFIG [name_arg] [default_value]    </td><td>A config item that can be defaulted to default_value (optional), with the name name_arg. Can be referred to elsewhere in the module with {{ shutit.name_arg }}. <br/>For example, if you have a line 'CONFIG foo bar' then you could have another line such as: 'RUN rm {{ shutit.foo }}' which would be run as: 'RUN rm bar'. If no default is given, it is requested from the user.</td></tr>
+<tr><td>CONFIG_SECRET [name_arg] [default_value]    </td><td>Same as CONFIG, but inputs the command interactively without echoing.</td></tr>
 </table>
 
 ## Conditions
