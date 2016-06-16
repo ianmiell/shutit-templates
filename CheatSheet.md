@@ -38,6 +38,7 @@
 <tr><td>LOG [arg]                  </td><td>Set the log level to [arg], which can be one of: DEBUG, INFO, WARNING, ERROR, CRITICAL</td></tr>
 <tr><td>CONFIG [name_arg] [default_value]    </td><td>A config item that can be defaulted to default_value (optional), with the name name_arg. Can be referred to elsewhere in the module with {{ shutit.name_arg }}. <br/>For example, if you have a line 'CONFIG foo bar' then you could have another line such as: 'RUN rm {{ shutit.foo }}' which would be run as: 'RUN rm bar'. If no default is given, it is requested from the user.</td></tr>
 <tr><td>CONFIG_SECRET [name_arg] [default_value]    </td><td>Same as CONFIG, but inputs the command interactively without echoing.</td></tr>
+<tr><td>QUIT [arg]                 </td><td>Exit the run with a message [arg].</td></tr>
 </table>
 
 ## Conditions
@@ -45,8 +46,28 @@
 <table>
 <tr><td><b>Condition</b></td><td><b>Description</b></td></tr>
 <tr><td>FILE_EXISTS [arg]</td><td>Conditional argument hinging on whether file (or directory) exists.</td></tr>
+<tr><td>RUN [arg]</td><td>Conditional argument hinging on the type of installs in this env (eg apt, yum, emerge et al)</td></tr>
 <tr><td>INSTALL_TYPE [arg]</td><td>Conditional argument hinging on the type of installs in this env (eg apt, yum, emerge et al)</td></tr>
 </table>
+
+Examples:
+
+Create a file if it does not exist:
+
+```bash
+IF_NOT FILE_EXISTS /tmp/mytmpfolder
+	RUN mkdir /tmp/mytmpfolder
+ENDIF
+```
+
+If wget not installed, create a file to mark that:
+
+```bash
+IF_NOT RUN wget --version
+	RUN touch /tmp/no_wget
+ENDIF
+```
+
 
 ## Docker delivery method
 
