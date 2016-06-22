@@ -4,7 +4,8 @@ then
 	while true 
 	do
 		VBoxManage list runningvms | grep {{ skeleton.module_name }} | awk '{print $1}' | xargs -IXXX VBoxManage controlvm 'XXX' poweroff && VBoxManage list vms | grep {{ skeleton.module_name }} | awk '{print $1}'  | xargs -IXXX VBoxManage unregistervm 'XXX' --delete
-		if [[ $(VBoxManage list vms | grep {{ skeleton.module_name }} | wc -l) -eq '0' ]]
+		# xargs is there to remove whitespace
+		if [[ $(VBoxManage list vms | grep {{ skeleton.module_name }} | wc -l | xargs) -eq '0' ]]
 		then
 			break
 		else
