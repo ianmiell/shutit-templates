@@ -8,20 +8,25 @@ mv template.py {{ skeleton.module_name }}.py
 
 
 cat << EOF
-# Edit the Dockerfile to reflect the stages of the build.
+cd $(pwd)
 # 
-# Edit the images.sh file to set the image name.
+# 1) Edit the Dockerfile to reflect the stages of the build.
 # 
-# Edit the configs/build.cnf to specify the relevant images that are allowed
+# 2) Edit the images.sh file to set the image name.
+# 
+# 3) Edit the configs/build.cnf to specify the relevant images that are allowed
 # (eg '.*') and the starting one.
 # 
-# Then edit the {{ skeleton.module_name }}.py file and add challenges etc.
+# 4) Edit the {{ skeleton.module_name }}.py file and add challenges etc.
 # 
-# And then:
+# 5) Run
 # 
-# 	./images.sh # to build and push the image to dockerhub
-# 	./run.sh    # to run the tutorial
+# ./images.sh # to build and push the image to dockerhub
+#
+# 6) Run
 # 
-# An example is here: https://github.com/ianmiell/git-bisect-tutorial
+# ./run.sh    # to run the tutorial
+# 
+# An example tutorial is here: https://github.com/ianmiell/git-bisect-tutorial
 EOF
 
