@@ -8,9 +8,9 @@ git init
 git submodule init
 git submodule add https://github.com/ianmiell/shutit-library
 
-cat << EOF
+cat > README.md << EOF
 # Run:
 cd $(pwd) && ./run.sh
 # to run.
 EOF
-
+cat README.md
