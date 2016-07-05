@@ -11,8 +11,7 @@ rm -rf $DIR
 
 shutit skeleton \
 	--shutitfile Shutitfile1 Shutitfile2 \
-	--module_directory ${DIR} \
-	--module_name ${MODULE_NAME} \
+	--name ${DIR} \
 	--domain ${DOMAIN} \
 	--delivery ${DELIVERY} \
 	--template_branch ${DELIVERY}
