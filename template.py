@@ -14,4 +14,4 @@
 
 	{{ skeleton.stop_section }}
 
-	{{ skeleton.final_section }}
+{{ skeleton.final_section }}
