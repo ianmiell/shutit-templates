@@ -6,6 +6,7 @@ DIR="/tmp/shutit_built/{{ skeleton.path }}"
 BUILT_DIR="${DIR}/built"
 DOMAIN="{{ skeleton.domain }}"
 DELIVERY="{{ skeleton.delivery }}"
+TEMPLATE_BRANCH="{{ skeleton.template_branch }}"
 
 rm -rf $DIR
 
@@ -15,7 +16,7 @@ shutit skeleton \
 	--module_name ${MODULE_NAME} \
 	--domain ${DOMAIN} \
 	--delivery ${DELIVERY} \
-	--template_branch docker
+	--template_branch ${TEMPLATE_BRANCH}
 
 if [[ ${DELIVERY} == 'bash' ]]
 then
