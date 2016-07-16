@@ -1,5 +1,6 @@
 # See CheatSheet.md for help with syntax
 
+#DEFAULT_INCLUDE false
 #DELIVERY docker
 #INSTALL vim
 #INSTALL tcpdump

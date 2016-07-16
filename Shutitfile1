@@ -4,6 +4,7 @@
 
 #DESCRIPTION A minimal todo app
 #MAINTAINER you@example.com
+
 #FROM alpine
 #MODULE_ID com.mycorp.mymodule.shutitfile1
 #DELIVERY docker
@@ -11,3 +12,4 @@
 #INSTALL git
 #RUN npm install todo
 #COMMIT shutitfile:part_one
+#PUSH shutitfile:part_one
