@@ -1,17 +1,31 @@
 {{ skeleton.header_section }}
 
-	{{ skeleton.build_section }}
+	def build(self, shutit):
+{{ skeleton.build_section }}
+		return True
                                  
-	{{ skeleton.config_section }}
+	def get_config(self, shutit):
+{{ skeleton.config_section }}
+		return True
 
-	{{ skeleton.test_section }}
+	def test(self, shutit):
+{{ skeleton.test_section }}
+		return True
 
-	{{ skeleton.finalize_section }}
+	def finalize(self, shutit):
+{{ skeleton.finalize_section }}
+		return True
 
-	{{ skeleton.isinstalled_section }}
+	def isinstalled(self, shutit):
+{{ skeleton.isinstalled_section }}
+		return False
 
-	{{ skeleton.start_section }}
+	def start(self, shutit):
+{{ skeleton.start_section }}
+		return True
 
-	{{ skeleton.stop_section }}
+	def stop(self, shutit):
+{{ skeleton.stop_section }}
+		return True
 
 {{ skeleton.final_section }}
