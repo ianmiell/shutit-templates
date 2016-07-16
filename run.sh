@@ -6,6 +6,7 @@ DIR="/tmp/shutit_built/{{ skeleton.path }}"
 BUILT_DIR="${DIR}/built"
 DOMAIN="{{ skeleton.domain }}"
 DELIVERY="{{ skeleton.delivery }}"
+DELIVERY="bash"
 
 rm -rf $DIR
 
