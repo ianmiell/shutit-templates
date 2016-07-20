@@ -36,6 +36,10 @@ end''')
 		return True
 
 	def get_config(self, shutit):
+		shutit.get_config(self.module_id,'vagrant_image',default='ubuntu/trusty64')
+		shutit.get_config(self.module_id,'vagrant_provider',default='virtualbox')
+		shutit.get_config(self.module_id,'gui',default='false')
+		shutit.get_config(self.module_id,'memory',default='1024')
 {{ skeleton.config_section }}
 		return True
 
